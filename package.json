@@ -1,0 +1,26 @@
+{
+  "name": "my-react",
+  "version": "1.0.0",
+  "description": "This is react js practice",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JyotiMPund/my-react.git"
+  },
+  "keywords": [],
+  "author": "Jyoti Pund",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JyotiMPund/my-react/issues"
+  },
+  "homepage": "https://github.com/JyotiMPund/my-react#readme",
+  "devDependencies": {
+    "parcel": "^2.14.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
