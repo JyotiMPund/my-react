@@ -21,6 +21,8 @@ CODE:
     </div>
   </body>
 </html>
+
+-- React.createElement -is an object
 -------------------------------------------------------------------------------------
 CDN?
 ------
@@ -163,6 +165,9 @@ NOTE:Remove entry point from package.json it can give the error for build like i
 -it can helps to host on HTTPs server
 -Tree shaking-it will remove unused code
 -different build for dev and production
+-Parcel transpile code into js engine understandable formate with the help of Babel-Babel is a js compiler
+JSX=>React.createElement=>ReatElement-js object=>HTML(render)
+NOTE-If you write code in multiple line then wrap it in () brackets so that Babel can understant
 ----------------------------------------------------------------------------------------------------
 -use following command-->
 
@@ -174,3 +179,30 @@ browsersList:[
   lastt 2 chrome version
 ]
 ----------------------------------------------------------------------------------------------------
+-Creating scripts->
+"scripts": {
+    "start": "parcel index.html",--->this is for dev-->now we run project using-->npm run start-->also you use->npm start
+    "build":"parcel build index.html",--->This is for prod-->now we can using -->npm run build
+    "test": "jest"
+  },
+  -------------------------------------------------------------------------------------------------------------------------------------
+  JSX?-->
+  -it is not HTML in JS
+  -jsx is a html like syntax or like XML
+----------------------------------------------------------------------------------------------------------------------------
+COMPONENT COMPOSITION->
+
+CODE-:
+const Title = () => <h1 id="heading">This is a react Element</h1>;
+
+//React Functional Component
+const Heading1 = () => {
+  return (
+    <div>
+      <Title />
+      <h1 id="heading1">This a react component</h1>
+    </div>
+  );
+};
+
+--Component composition means component inside component
