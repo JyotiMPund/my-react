@@ -1,4 +1,4 @@
-->creating basic Hello World using JS=>
+->CREATING BASIC HELLO WORLD JS=>
   -------------------------------------
   
 CODE:
@@ -55,7 +55,7 @@ CODE:
   </body>
 </html>
 -------------------------------------------------------------------------------------------------
-->Hello World basic program in react:
+->HELLO WORLD BASIC PROGRAM IN REACT:
 CODE:
 		<!DOCTYPE html>
 <html lang="en">
@@ -85,24 +85,24 @@ CODE:
 </html>
 ---------------------------------------------------------------------------------------------------------------
 
-->In git if you are getting below error
+->IN GIT IF YOU ARE GETTING BELOW ERROR
 --remote: Permission to JyotiMPund/my-react.git denied to jyotiP123456789.
 fatal: unable to access 'https://github.com/JyotiMPund/my-react.git/': The requested URL returned error: 403
 
 use This command--> git config --global credential.useHttpPath true
 -------------------------------------------------------------------------------------------------------------
-npm and npm init --> 
+NPM AND NPM INIT--> 
 -it manages the packages
 -its standard repository for all the packages
 -use npm init to create package.json file
 -package.json is configuration for npm
-
-bundler-->
+----------------------------------------------------------------------------------------------------------------
+BUNDLER-->
 -bundler helps to bundle the app and push it to the production
 
 --create-react-app uses webpack and bable behind the scenes
 
-parcel bundler-->
+PARCEL BUNDLER-->
 -------------
 command to install->
 npm install -D parcel --> its install as a dev depandancy using -D
@@ -111,30 +111,30 @@ npm install -D parcel --> its install as a dev depandancy using -D
 
    using tilde it can do major updates
 -------------------------------------------------------------------------------------------------
-package.json:->
+PACKAGE.JSON(package.json):->
 
 -its a configuaration for npm
 -it keeps a track of what version of that package is installed into our system
 -it keeps a approx version of the package
 --------------------------------------------------------------------------------------------
-package.package-lock.json:->
+PACKAGE-LOCK.JSON(package-lock.json):->
 -its keep a track of exact version of the package and locks it
 --------------------------------------------------------------------------------------------
-node_modules:->
+NODE_MODULES(node_modules):->
 - it contains the data of the dependancies of the packages
 -its a collection of dependancies
 -if we have package.json and package-lock.json file then we can regenarate node_modules
 ------------------------------------------------------------------------------------------
-transitive dependancies:->
+TRANSITIVE DEPENDANCIES:->
 
 -its dependancies of depandancy
 --------------------------------------------------------------------------------------------
-npx parcel index.html->
+NPX PARCEL INDEX.HTML(npx parcel index.html)->
 -index.html is the source file ..by using above command app hosts on the server 
 
 -npx means it executes package , and npm means its installing package
 -------------------------------------------------------------------------------------------
-npm install react->
+NPM INSTALL REACT(npm install react)->
 -this is the command to install react --as a normal depandancy
 npm install react-dom->
 -this is the command to install react-dom
@@ -146,7 +146,7 @@ if we import React and ReactDOM without type module
 -----------------------------------------------------------------------------------------
 NOTE:Remove entry point from package.json it can give the error for build like in this i have removed App.js
 -------------------------------------------------------------------------------------------------------------
-#Parcel->
+#PARCEL->
 -------------
 -Dev Build
 -Local surver
@@ -169,17 +169,17 @@ NOTE:Remove entry point from package.json it can give the error for build like i
 JSX=>React.createElement=>ReatElement-js object=>HTML(render)
 NOTE-If you write code in multiple line then wrap it in () brackets so that Babel can understant
 ----------------------------------------------------------------------------------------------------
--use following command-->
+-USE FOLLOWING COMMANND-->
 
 for production build-->npx parcel build index.html
 ----------------------------------------------------------------------------------------------------
-you can add bellow code in package.json for supporting browser version:->
+YOU CAN ADD BELOW CODE IN package.json FOR SUPPORTING BROWSER VERSION:->
 
 browsersList:[
   lastt 2 chrome version
 ]
 ----------------------------------------------------------------------------------------------------
--Creating scripts->
+-CREATING SCRIPTS->
 "scripts": {
     "start": "parcel index.html",--->this is for dev-->now we run project using-->npm run start-->also you use->npm start
     "build":"parcel build index.html",--->This is for prod-->now we can using -->npm run build
@@ -206,3 +206,12 @@ const Heading1 = () => {
 };
 
 --Component composition means component inside component
+------------------------------------------------------------------------------------------------------------------------
+CONFIG DRIVEN UI:
+-The design and content don't need to be hardcoded in the source code; 
+-rather, it is driven by configuration files,
+-meaning the same codebase can be used for different user interfaces based on the configuration.
+-------------------------------------------------------------------------------------------------------------------
+KEY->
+--always use key -->if you pass id as a key it will help to identify the new item so that only that iten can render.
+--you can also use index but its not a best practice to use index as a key
