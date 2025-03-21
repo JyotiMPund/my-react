@@ -41,3 +41,8 @@
   flex-wrap: wrap;
   gap: 15px;
 }
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}

@@ -215,3 +215,26 @@ CONFIG DRIVEN UI:
 KEY->
 --always use key -->if you pass id as a key it will help to identify the new item so that only that iten can render.
 --you can also use index but its not a best practice to use index as a key
+---------------------------------------------------------------------------------------------------------------------
+TWO TYPES OF EXPORT/IMPORT->
+
+-Default Export/import:
+--export default component;
+--import component from "path"
+
+-Named Export/Import:
+--export const component
+--import {component} from "path"
+-----------------------------------------------------------------------------------------------------------
+#REACT HOOKS->
+(Normal Js Utility Functions)
+-useState()-->Superpowerfull state variable in react
+-useeffect()
+
+NOTE:-Whenever a state variable changes react rerender the component
+-----------------------------------------------------------------------------------------------------------
+Reconciliation algorithm(React Fiber)
+
+VERTUAL DOM->
+Its a representation of an actual DOM
+React is fast bcz its does efficiant DOM manupullation

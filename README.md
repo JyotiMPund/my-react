@@ -18,3 +18,24 @@
 -it can helps to host on HTTPs server
 -Tree shaking-it will remove unused code
 -different build for dev and production
+
+#Food ordering App
+
+- Header
+- ---Logo
+- ---Nav Items
+- Body
+- ---Search
+- ---RestaurantCard
+- -----img
+- -----Name of Res ,Star Rating,cuisine, Delevery time
+- Footer
+- ---Copyright
+- ---Links
+- ---Address
+- ---Contact
+
+#REACT HOOKS->
+(Normal Js Utility Functions)
+-useState()-->Superpowerfull state variable in react
+-useeffect()

@@ -1,57 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- *
- * Header
- * ---Logo
- * ---Nav Items
- * Body
- * ---Search
- * ---RestaurantCard
- * -----img
- * -----Name of Res ,Star Rating,cuisine, Delevery time
- * Footer
- * ---Copyright
- * ---Links
- * ---Address
- * ---Contact
- */
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = ({ resData }) => {
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img className="res-logo" src={resData.image} alt={resData.name} />
-      <h3>{resData.name}</h3>
-      <h4>{resData.cuisines.join(", ")}</h4>{" "}
-      {/* Join cuisine array into string */}
-      <h4>{resData.rating} Stars</h4>
-      <h4>{resData.time} minutes</h4>
-    </div>
-  );
-};
-
 const resObj = [
   {
     id: 1,
@@ -67,7 +13,7 @@ const resObj = [
       "https://thumbs.dreamstime.com/b/roasted-meatballs-french-fries-vegetable-salad-71420439.jpg",
     name: "KFC",
     cuisines: ["Fast Food", "Chicken", "American"],
-    rating: 4.5,
+    rating: 3.5,
     time: 30,
   },
   {
@@ -76,7 +22,7 @@ const resObj = [
       "https://th.bing.com/th/id/OIP.fBe1gguUHhEyZuradl-J6QAAAA?rs=1&pid=ImgDetMain",
     name: "Pizza Hut",
     cuisines: ["Italian", "Pizza", "Fast Food"],
-    rating: 4.2,
+    rating: 3.2,
     time: 40,
   },
   {
@@ -85,7 +31,7 @@ const resObj = [
       "https://images.pexels.com/photos/1860208/pexels-photo-1860208.jpeg?cs=srgb&dl=cooked-food-1860208.jpg&fm=jpg",
     name: "The Indian Kitchen",
     cuisines: ["Indian", "Vegetarian", "Traditional"],
-    rating: 4.8,
+    rating: 3.8,
     time: 25,
   },
   {
@@ -94,7 +40,7 @@ const resObj = [
       "https://th.bing.com/th/id/OIP.SvOrBKShWFObYOqaP1MyNAHaD9?w=315&h=180&c=7&r=0&o=5&pid=1.7",
     name: "Burger King",
     cuisines: ["Fast Food", "Burgers", "American"],
-    rating: 4.1,
+    rating: 3.1,
     time: 20,
   },
   {
@@ -103,7 +49,7 @@ const resObj = [
       "https://th.bing.com/th/id/OIP.lEa60MoPEz7kNWZQBc_a3wHaEo?rs=1&pid=ImgDetMain",
     name: "Sushi World",
     cuisines: ["Japanese", "Sushi", "Asian"],
-    rating: 4.7,
+    rating: 3.7,
     time: 45,
   },
   {
@@ -175,7 +121,7 @@ const resObj = [
       "https://th.bing.com/th/id/OIP.te9gPiD8UiUZ0XQ1qcAjEAHaEL?w=273&h=180&c=7&r=0&o=5&pid=1.7",
     name: "Nando's",
     cuisines: ["Portuguese", "Grill", "Chicken"],
-    rating: 4.6,
+    rating: 3.6,
     time: 35,
   },
   {
@@ -189,30 +135,4 @@ const resObj = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        <div className="res-container">
-          {resObj.map((restaurant) => (
-            <RestaurantCard key={restaurant.id} resData={restaurant} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />); //render functional component
+export default resObj;
