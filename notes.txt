@@ -238,3 +238,30 @@ Reconciliation algorithm(React Fiber)
 VERTUAL DOM->
 Its a representation of an actual DOM
 React is fast bcz its does efficiant DOM manupullation
+
+---------------------------------------------------------------------------------------------------------------------
+Two API Rendering approch->
+
+1)Loads->API>Render
+2)Loads->Render->API->Render---its better approch
+----------------------------------------------------------------------------------------------------------------------
+USEEFFECT HOOKS
+
+Code:
+useEffect(() => {
+    console.log("useEffect rendered");
+  }, []);
+
+  useEffect contains callback functiona and dependancies
+  --whatever called inside the useEffect it calls after the component render
+
+  ----------------------------------------------------------------------------------------------------------------
+  REACT FIBER|REACT RECONCILIATION:
+
+-it means react finds the difference between actual dom and vertual dom and only do the required changes
+-thats why react is fast
+-------------------------------------------------------------------------------------------
+How Optional Chaining Works:
+?. allows you to safely access a property or method.
+
+If a property or reference before the ?. is null or undefined, the expression will return undefined instead of throwing an error.
