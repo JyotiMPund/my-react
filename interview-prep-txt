@@ -1,0 +1,107 @@
+## 1)What is Fiber?
+
+2)Fiber is the brain of the React's Rendering system. It helps React update the UI more efficiantly,smoothly,
+and responsively.by breaking work into smaller pieces and handling it smartly.
+
+## 3)Difference Between Fiber and Reconciliation:
+
+            Reconciliation              -             Fiber
+                                        -
+
+1. The Process of compairing old and - 1. The Engine or Implementation that performs Reconciliation.
+   New virtual DOM to Decide what to -
+   update in the UI. -
+2. What changes need to be made - 2.How and When those changes are applied efficiently. -
+   3.Less flexible and not interruptible - 3.More flexible and allows react to handle complex UI updates smoothly
+
+---
+
+4)Print numbers from 5 to 100; replace multiples of 5 with "Tarakesh".
+Ans:
+
+for(i=5; i<101;i++){
+if(i%5===0){
+console.log("Tarakesh")
+}else{
+console.log(i)
+}
+}
+
+5)Reverse a string:
+ANS:
+const str='hello';
+let res='';
+
+for(let i=str.length-1; i>=0;i--){
+res +=str[i];
+}
+console.log(res);
+
+---
+
+6)Higher Order component:
+->A function that takes a component as an argument
+->Returns new component that inhances the orignal one
+->Doesn't modify the original component directly,but adds functionality to it
+
+Ex-
+
+## Hoc.js
+
+Const Hoc=(WrappedComponent)=>{
+return function(){
+return(
+
+<div>
+<h1>Hello,World</h1>
+<Wrappedcomponent/>
+</div>
+)
+}
+}
+export default Hoc;
+
+## App.js:
+
+import Hoc from "./components/Hoc"
+
+const Greeting=()=>{
+return <h1>Good afternoon</h1>
+}
+
+const EnhancedComponent=hoc(Greeting);
+
+export default function App(){
+return(
+
+<div>
+<Enhancedcomponent/>
+</div>
+)
+}
+-----------------------------------------------------------------------------------
+Difference between state and prop:
+
+         Props                    -              State
+                                  -
+
+1)Used to pass data from parent - 1)Used to manage data within a component
+to child component - - 2) Read only-Cannot be modified - 2)Mutable-Can be updated using seState or useState
+by the receiving component - -
+3)Set by the parent component - 3)Managed by the component itself -
+4)Cannot have the initial default - 4)Can have initial values defined in the component
+values inside the component - - -
+
+---
+
+7)Difference between useState and useEffect:
+
+                 useState                         -            useEffect
+                                                  -
+                                                  -
+
+1)Used to create and manage state - 1) Used to handle side effects (like API calls, DOM update)
+in a component -
+-2)Takes function that runs after render
+2)Return state variable - -
+3)For storing and updating data in a component -3) for returning code after render -

@@ -1,0 +1,144 @@
+forEach:->
+
+calls a function once for each array element, forEach is used only for side effects (e.g., printing, logging). It does not return a new array.
+it accepts(value,index,array)
+const a=[1,2,3,4];
+a.forEach((num)=>{
+    console.log(num*2)
+})
+
+
+Higher order Array Methods(map,filter,reduce):=>
+-------------------------------------------------
+a)map:->
+
+creates a new array by performing some operations on each array element.
+it accepts(value,index,array)
+
+Ex 1: double of an array
+
+const arr=[5,1,2,3,4,6,7];
+
+const result=arr.map((double)=>double*2)
+console.log(result)
+
+Ex 2: Binary of an array
+
+const binaryArr=[1,2,3,4];
+const result=binaryArr.map((binary)=>binary.toString(2))
+console.log(result);
+
+Ex 3: get the fullname and age from an array of object
+
+const users=[
+    {"firstname":"jyoti","lastname":"pund","age":26},
+    {
+        "firstname":'pooja',"lastname":'sabne',"age":28
+    },
+    {"firstname":'arti',"lastname":"rajegore","age":26}
+    ]
+
+const output=users.map((fullname)=>  "firstname:" + fullname.firstname + " " + "Lastname:" + fullname.lastname + " " + "Age:" + fullname.age)
+console.log(output)
+
+b)filter:->
+
+Filters elements from an iterable for which a function returns True.
+orfilter outs the value from an array
+
+Ex 1:->
+const arr2=[1,2,3,4,5,6,7,8,9,10];
+const result=arr2.filter((output=>output>5))
+console.log(result)
+
+EX:2:filter out the even num from an array
+const arr=[1,2,3,4,5,6,7,8,9,10];
+const output=arr.filter((even)even%2===0);
+console.log(output)
+
+c)reduce: reducec an array to a single value
+
+Ex 1: Count of an array
+
+const arr=[1,2,3,4,5,6,7,8,9,10];
+
+const output=arr.reduce(function(acc,curr){
+    acc=acc+1
+    return acc
+})
+console.log(output)
+
+Ex: Normal function using sum of array
+
+ function findSum(arr){
+     sum=0;
+     
+     for(let i=0; i<arr.length; i++){
+         sum=sum+arr[i]
+     }
+     return sum
+ }
+ console.log("sum",findSum(arr))
+
+ Ex:Normal function using find max from an array
+ function findMax(arr){
+    let max=0
+     
+     for(let i=0; i<arr.length; i++){
+         if(arr[i]>max){
+             max=arr[i]
+         }
+     }
+     return max
+ }
+ 
+ console.log(findMax(arr))
+
+Ex 2: Sum of an array
+
+const arr=[1,2,3,4,5,6,7,8,9,10];
+const output=arr.reduce((a,b)=>a+b)
+console.log(output)
+
+Ex3: Sum of an array by creating another function and pass the function to the reduce method
+
+const arr=[1,2,3,4,5,6,7,8,9,10];
+
+ function sum(a,b){
+    return a+b
+ }
+
+ const output=arr.reduce(sum)
+    console.log(output)
+ 
+
+Ex 3: Find the count of age of every user from an array of object
+
+const users=[
+    {"firstname":"jyoti","lastname":"pund","age":26},
+    {
+        "firstname":'pooja',"lastname":'sabne',"age":28
+    },
+    {"firstname":'arti',"lastname":"rajegore","age":26}
+    ]
+
+const findage=users.reduce(function(acc,curr){
+    if(acc[curr.age]){
+        acc[curr.age]=acc[curr.age]+1
+    }else
+    {
+        acc[curr.age]=1
+    }
+    return acc
+},{})
+console.log(findage)
+
+----------------------------------------------------------------------------------------------------
+Difference between map and forEach:
+
+Summary Table
+
+Function	Purpose	           Returns
+map	     Transform items	 A new iterable(array)
+filter	 Select items	     A new iterable(array)
+reduce	 Combine items	     A single value

@@ -1,0 +1,41 @@
+//Write a program for How To find duplicate elements in array in javascript
+
+CODE:
+let arrNum=[1,2,3,4,4,5,5]
+
+let duplicates=arrNum.filter((ele,index,arr)=>arr.indexOf(ele)!==index)
+console.log(duplicates)
+--------------------------------------------------------------------------------------------------
+//Write a program for How To find duplicate elements in array in javascript and count of duplicate
+CODE:
+let arrNum=[1,2,3,4,4,5,5]
+
+let duplicates=arrNum.filter((ele,index,arr)=>arr.indexOf(ele)!==index)
+console.log(duplicates)
+
+let countDuplicate=duplicates.length;
+console.log(countDuplicate)
+-------------------------------------------------------------------------------------------------------------------------
+
+//Write a program to find count of duplicate number from an array
+CODE:
+let arrNum = [1, 2, 3, 4, 4, 5, 5, 5];
+
+// Count occurrences
+let countObj = {};
+arrNum.forEach(num => countObj[num] = (countObj[num] || 0) + 1);
+
+// Display duplicates and counts
+for (let num in countObj) {
+    if (countObj[num] > 1) {
+        console.log(`Number: ${num}, Count: ${countObj[num]}`);
+    }
+}
+
+
+
+
+
+
+
+

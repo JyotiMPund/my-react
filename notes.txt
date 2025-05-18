@@ -234,11 +234,19 @@ TWO TYPES OF EXPORT/IMPORT->
 NOTE:-Whenever a state variable changes react rerender the component
 -----------------------------------------------------------------------------------------------------------
 Reconciliation algorithm(React Fiber)
+ REACT FIBER|REACT RECONCILIATION:
+
+-it means react finds the difference between actual dom and vertual dom and only do the required changes
+-thats why react is fast
 
 VERTUAL DOM->
 Its a representation of an actual DOM
 React is fast bcz its does efficiant DOM manupullation
+-----------------------------------------------------------------------------------------------
+Diffing:->
 
+Diffing in React refers to the process of comparing the previous Virtual DOM tree with the new Virtual DOM tree to determine what has changed, 
+so React can update the real DOM efficiently.
 ---------------------------------------------------------------------------------------------------------------------
 Two API Rendering approch->
 
@@ -255,13 +263,116 @@ useEffect(() => {
   useEffect contains callback functiona and dependancies
   --whatever called inside the useEffect it calls after the component render
 
-  ----------------------------------------------------------------------------------------------------------------
-  REACT FIBER|REACT RECONCILIATION:
+CODE:
+  useEffect(() => {
+    console.log("useEffect rendered");
+  });
+  --useEffect without any depandancy array it will call every time when component rendres
 
--it means react finds the difference between actual dom and vertual dom and only do the required changes
--thats why react is fast
+CODE:
+useEffect(() => {
+    console.log("useEffect rendered");
+  }, []);
+  
+  -If depandancy array is empty=[]- useEffect called on initial render(Just Once)
+
+CODE:Ex
+useEffect(() => {
+    console.log("useEffect rendered");
+  }, [btnReact]);
+  --If depandancy array is not empty=[btnReact]-it will call everytime when btnReact is updated
+
+  NOTE:Never use useState inside the (if,for,functions) statement
+  ----------------------------------------------------------------------------------------------------------------
+ 
 -------------------------------------------------------------------------------------------
 How Optional Chaining Works:
 ?. allows you to safely access a property or method.
 
 If a property or reference before the ?. is null or undefined, the expression will return undefined instead of throwing an error.
+------------------------------------------------------------------------------------------------------
+REACT ROUTER :
+-Command to install ->npm install react-router-dom
+Configuration of router:-> using this->import { createBrowserRouter,RouterProvider } from "react-router-dom";
+-->inside App.js
+
+CODE:->create the path like below
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
+-Render the appRouter like below
+CODE:->
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<RouterProvider router={appRouter} />); //render functional component
+
+-also react router dom creates errror page if url not matches
+-using useRouteError hook we can show error accordingly
+
+NOTE:->
+--always install latest version of react router dom 
+--If you get any errors then use following commands
+--install this version-->npm install react-router-dom@6.22.0
+---Remove-Item -Recurse -Force .parcel-cache
+--npm start
+---------------------------------------------------------------------------------------------------------
+<Link></Link> AND <a></a> tag
+
+->Using <a></a> if we redirect the page then it will reload whole page
+->Using <Link></Link> it will load only that perticular page so LINK is the best practice use
+---------------------------------------------------------------------------------------------------------
+REACT IS A SINGLE PAGE APPLICATION
+
+-in react multiple components can be created so it only render that components 
+it wont reload the whole apllication or page it only renders the components thats 
+why called react is a single page application
+
+------------------------------------------------------------------
+TWO TYPES OF ROUTING IN WEB APP
+
+-Client Side Routing
+-Server Side Routing
+
+-------------------------------------------------------------------
+useParams HOOK:
+
+useParams is an object contains resId
+
+-useParams is a hook provided by React Router (v5 and v6), used to access URL parameters in a component.
+
+-It's useful when your route contains dynamic segments, like /user/:id, and you want to get the value of id inside the component rendered by that route.
+
+......................................................................................................
+
+Link:->
+
+it is used to naviagte from one functionality to another
+
+it uses <a></a> ancor tag behind the scenes
+
+react-router-dom gives the Link tag 
+
+its wrapper over ancor tag
+
+react-router-dom keeps track of the page so dont have to refresh the page
+
+------------------------------------------------------------------------------
+Optimization:=>
+---------------------
+Single resposibility Principals (SRP)->
+-In simpler terms:
+-Each module, class, or function should focus on doing just one thing, and do it well.
+
+Modular Means:
+-You break down your code into small small module.
+- it makes the code testable and maintanable
+-code becomes reusable- components
+-code becomes readable

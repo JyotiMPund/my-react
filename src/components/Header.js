@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/contants";
+import { Link } from "react-router-dom";
+import PostList from "./PostList";
+import Integrate from "./Integrate";
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
 
@@ -12,9 +15,16 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+
           <li>Cart</li>
           <button
             className="login"
@@ -27,6 +37,8 @@ const Header = () => {
             {btnLogin}
           </button>
         </ul>
+        {/* <PostList /> */}
+        <Integrate />
       </div>
     </div>
   );
